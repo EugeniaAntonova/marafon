@@ -1,0 +1,94 @@
+@media(min-width: 500px) {
+    :root {
+        --radius: 10px;
+        --gap-s: 8px;
+        --gap-m: 16px;
+        --gap-l: 22px;
+
+        --xxs-text: 10px;
+        --xs-text: 14px;
+        --s-text: 16px;
+        --m-text: 20px;
+        --l-text: 26px;
+        --xl-text: 36px;
+        --xxl-text: 56px;
+    }
+
+    .m-section {
+        padding: 0 46px 60px;
+        background-repeat: repeat-x, no-repeat, no-repeat, repeat-x, no-repeat;
+        background-position: bottom, bottom 10px left 2px, bottom 10px right 2px, center, center;
+        background-size: 39px 7px, 96px 100px, 96px 100px, 582px 862px, cover;
+    }
+
+    .m-button--big {
+        padding: 20px;
+    }
+
+    .section-title {
+        --w: calc(100vw + 26px);
+        margin-inline: -46px;
+        padding: 32px 16px 54px;
+        background-position: bottom 1px center, top 12px center, top 12px left 2px, top 12px right 2px, top center;
+        background-size: 87px 60px, 85px 16px, 65px 66px, 65px 66px, var(--w) 150px;
+    }
+
+    .hero .section-title {
+        padding: 28px 16px 76px;
+        background-position: bottom 18px center, top 12px center, top 12px left, top 12px right, top center;
+        background-size: 87px 60px, 85px 16px, 65px 66px, 65px 66px, var(--w) 218px;
+    }
+
+    .hero>.decor {
+        top: 88px;
+        background-image: url(./assets/bg-lights-2x.png);
+        background-size: 370px;
+    }
+
+    .hero>.decor:nth-of-type(1) {
+        background-position-x: 3px;
+    }
+
+    .hero>.decor:nth-of-type(2) {
+        background-position-x: 3px;
+    }
+
+    .info__item {
+        gap: 10px;
+    }
+
+    .info__item:nth-of-type(1) .decor {
+        width: 64px;
+    }
+    
+    .info__item:nth-of-type(2) .decor {
+        width: 55px;
+    }
+
+    .rating__item {
+        padding: 14px;
+    }
+
+    .rating__item .place {
+        font-size: 60px;
+        width: 76px;
+    }
+
+    .prizes .section-title {
+        padding-bottom: 64px;
+        background-position: bottom 4px center, top 6px center, top 6px left 2px, top 6px right 2px, top -24px center;
+        background-size: 87px 60px, 85px 16px, 65px 66px, 65px 66px, var(--w) 272px;
+    }
+
+    .prizes__table td {
+        padding: 14px;
+    }
+
+    .form-wrapper {
+        padding: 40px 24px;
+    }
+    
+    .check__form input[type="text"] {
+        padding: 16px 24px;
+    }
+}

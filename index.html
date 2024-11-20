@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@800&family=Alegreya:wght@500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./theming.css">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./media500.css">
+    <link rel="stylesheet" href="./media720.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <main class="out-of-header">
+        <section class="m-container m-section hero">
+            <div class="decor"></div>
+            <div class="decor"></div>
+            <h1 class="section-title">
+                <span class="text-shadow" aria-hidden="true">
+                    Новогодний<br>марафон
+                </span>
+                <span>
+                    <span class="text">Новогодний</span><br><span class="text">марафон</span>
+                </span>
+            </h1>
+            <div class="hero__info">
+                <div class="info__item">
+                    <div class="decor"></div>
+                    <div class="content">
+                        <span class="info__title">Призовой фонд:</span>
+                        <span class="info__value" role="list">
+                            <span role="listitem">
+                                8 400 000 &#8376;
+                            </span><br>
+                            <span role="listitem">
+                                3х iPhone 15
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="info__item">
+                    <div class="decor"></div>
+                    <div class="content">
+                        <span class="info__title">До старта:</span>
+                        <span class="info__value js-nm ld" data-timer="true">
+                            <span class=" timer__body_ld">2 д. 4 ч. 23 м.</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <p class="hero__text">
+                Покупайте любые лотерейные билеты в&nbsp;точках продаж и&nbsp;участвуйте в&nbsp;&laquo;Новогоднем
+                марафоне&raquo;. Чем больше сумма
+                покупок тем выше позиция в&nbsp;рейтинге.
+            </p>
+            <p class="hero__asterisk text-sub">
+                *Призовой фонд будет<br>
+                распределен между ТОП 10 участников
+            </p>
+        </section>
+        <section class="m-container m-section rating" id="rating">
+            <h2 class="section-title">
+                <span class="text-shadow" aria-hidden="true">Рейтинг</span>
+                <span class="text">Рейтинг</span>
+            </h2>
+            <div class="rating__list" role="list" id="rating-list">
+            </div>
+            <a href="#" target="_blank" class="link download-link inline-link">Скачать весь список</a>
+            <p class="hero__asterisk text-sub">
+                Рейтинг обновляется 1&nbsp;раз в&nbsp;час.<br>
+                1&nbsp;очко рейтинга = 100&nbsp;тенге покупок
+            </p>
+        </section>
+        <section class="m-container m-section check">
+            <h2 class="section-title">
+                <span class="text-shadow" aria-hidden="true">Проверка</span>
+                <span class="text">Проверка</span>
+            </h2>
+            <div class="form-wrapper">
+                <h3 class="check__title">
+                    Как узнать свой <span>player&nbsp;id</span>?
+                </h3>
+                <p class="check__instructions">
+                    Введите свой номер телефона и
+                    узнайте свой player&nbsp;id,
+                    позицию в&nbsp;рейтинге и&nbsp;количество
+                    набранных очков.
+                </p>
+                <form action="#" class="check__form" id="check-form">
+                    <div class="input-wrapper">
+                        <input type="text" class="input" inputmode="numeric" name="phone" id="phone" maxlength="13" placeholder="+7 7777777777" autocomplete="false">
+                    </div>
+                    <button type="submit" class="m-button m-button--accent" id="check-submit">
+                        <span class="text-shadow" aria-hidden="true">Узнать</span>
+                        <span class="text">Узнать</span>
+                    </button>
+                    <div class="cover"></div>
+                </form>
+                <div class="result" id="result"></div>
+            </div>
+            <p class="text-sub">
+                Для участия в&nbsp;акции &laquo;Новогодний&nbsp;марафон&raquo;<br>
+                при&nbsp;покупке билетов обязательно сообщите свой&nbsp;номер<br>
+                телефона продавцу-консультанту
+            </p>
+        </section>
+        <section class="m-container m-section prizes">
+            <h2 class="section-title">
+                <span class="text-shadow" aria-hidden="true">Призы</span>
+                <span class="text">Призы</span>
+                <span class="top">
+                    Призовой фонд 8&nbsp;400&nbsp;000&nbsp;&#8376; будет
+                    распределен между ТОП&nbsp;10 участниками
+                </span>
+            </h2>
+            <div class="prizes-table-wrapper">
+                <table class="prizes__table">
+                    <tr class="table__row">
+                        <td class="place">1 место</td>
+                        <td class="prize">3&nbsp;000&nbsp;000&nbsp;&#8376;</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="place">2 место</td>
+                        <td class="prize">2&nbsp;000&nbsp;000&nbsp;&#8376;</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="place">3 место</td>
+                        <td class="prize">1&nbsp;000&nbsp;000&nbsp;&#8376;</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="place">4 место</td>
+                        <td class="prize">700&nbsp;000&nbsp;&#8376;</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="place">5 место</td>
+                        <td class="prize">500&nbsp;000&nbsp;&#8376;</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="place">6-7 место</td>
+                        <td class="prize">300&nbsp;000&nbsp;&#8376;</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="place">8-10 место</td>
+                        <td class="prize">200&nbsp;000&nbsp;&#8376;</td>
+                    </tr>
+                </table>
+            </div>
+            <button type="button" class="m-button m-button--accent m-button--big js-scroller" data-target="rating">
+                <span class="text-shadow" aria-hidden="true">Посмотреть рейтинг</span>
+                <span class="text">Посмотреть рейтинг</span>
+            </button>
+            <p class="text-sub">
+                Розыгрыш 3х iPhone&nbsp;15 состоится между участниками совершившими покупки в&nbsp;точках продаж
+                на&nbsp;сумму от&nbsp;10&nbsp;000&nbsp;&#8376; за&nbsp;период проведения акции - 8&nbsp;января
+                в&nbsp;;VK
+            </p>
+        </section>
+        <section class="m-container m-section faq">
+            <h2 class="section-title">
+                <span class="text-shadow" aria-hidden="true">FAQ</span>
+                <span class="text">FAQ</span>
+            </h2>
+            <div class="faq-list" role="list">
+                <div role="listitem">
+                    <button type="button" class="js-toggle m-button m-button--secondary m-button--big">
+                        <span class="text-shadow">Об акции</span><span class="text">Об акции</span>
+                    </button>
+                    <div class="panel">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. A, eaque sed deserunt, asperiores, incidunt ipsa expedita voluptas in libero fugiat earum. Omnis quas voluptatum cupiditate corrupti dolor, dignissimos id. Necessitatibus.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <template id="rating-item">
+        <div class="rating__item" role="listitem">
+            <div class="place js-place">
+                <span class="text-shadow" aria-hidden="true"></span>
+                <span class="text"></span>
+            </div>
+            <div class="id rating__section">
+                <span class="title">player id</span>
+                <span class="value js-id"></span>
+            </div>
+            <div class="phone rating__section">
+                <span class="title">номер телефона</span>
+                <span class="value js-phone"></span>
+            </div>
+            <div class="score rating__section">
+                <span class="title">количество очков</span>
+                <span class="value js-score"></span>
+            </div>
+        </div>
+    </template>
+    <script src="./main.js"></script>
+</body>
+
+</html>

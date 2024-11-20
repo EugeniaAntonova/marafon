@@ -1,0 +1,118 @@
+@media(min-width: 720px) {
+    :root {
+        --radius: 14px;
+        --gap-s: 14px;
+        --gap-m: 32px;
+        --gap-l: 32px;
+
+        --xxs-text: 12px;
+        --xs-text: 18px;
+        --s-text: 18px;
+        --m-text: 24px;
+        --l-text: 38px;
+        --xl-text: 56px;
+        --xxl-text: 68px;
+    }
+
+    .out-of-header {
+        background-color: var(--bg);
+        background-image: url(./assets/bg-pattern.svg);
+        background-size: 291px 274px;
+    }
+
+    .m-section {
+        position: relative;
+        padding: 0 68px 80px;
+        background-position: 9px bottom, bottom 16px left 16px, bottom 16px right 16px, center, center;
+        background-size: 70px 12px, 157px 162px, 157px 162px, 582px 862px, cover;
+    }
+    .m-section::before,
+    .m-section::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 11px;
+        height: 216px;
+        background-image: url(./assets/bg-dash-v.svg);
+        background-size: 12px 70px;
+        background-repeat: no-repeat repeat;
+    }
+
+    .m-section::before {
+        left: 1px;
+    }
+
+    .m-section::after {
+        right: 1px;
+        transform: scaleX(-1);
+    }
+
+    .m-button--big {
+        padding: 26px;
+    }
+
+    .section-title {
+        --w: 720px;
+        margin-inline: -68px;
+        padding: 58px 40px 110px;
+        background-position: bottom 22px center, top 20px center, top 20px left 24px, top 20px right 24px, top center;
+        background-size: 137px 90px, 152px 29px, 115px 118px, 115px 118px, var(--w) 256px;
+    }
+
+    .hero .section-title {
+        padding: 53px 16px 115px;
+        background-position: bottom 26px center, top 20px center, top 20px left 24px, top 20px right 24px, top center;
+        background-size: 137px 90px, 152px 29px, 115px 118px, 115px 118px, var(--w) 304px;
+    }
+
+    .prizes .section-title {
+        padding-bottom: 116px;
+        background-position: bottom 22px center, top 20px center, top 20px left 24px, top 20px right 24px, top center;
+        background-size: 137px 90px, 152px 29px, 115px 118px, 115px 118px, var(--w) 364px;
+    }
+
+    .hero>.decor {
+        top: 166px;
+    }
+
+    .hero__info {
+        margin-bottom: 50px;
+    }
+
+    .info__item {
+        gap: 12px;
+    }
+
+    .info__item:nth-of-type(1) .decor {
+        width: 75px;
+    }
+    
+    .info__item:nth-of-type(2) .decor {
+        width: 65px;
+    }
+
+    .rating__item {
+        padding: 20px;
+    }
+
+    .rating__item .place {
+        font-size: 76px;
+        width: 90px;
+    }
+
+    .form-wrapper {
+        padding: 48px 32px;
+    }
+
+    .check__form input[type="text"] {
+        padding: 22px 44px;
+    }
+
+    .prizes .section-title .top {
+        max-width: 400px;
+    }
+
+    .prizes__table td {
+        padding: 20px;
+    }
+}
