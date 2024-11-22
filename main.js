@@ -58,7 +58,7 @@ class RatingCreator {
 
       fragment.appendChild(clone);
     });
-
+    this.parent.innerHTML = '';
     this.parent.appendChild(fragment);
   }
 
@@ -78,14 +78,14 @@ class RatingCreator {
   }
 
   onError(error) {
-    console.log('error', error);
     this.parent.innerHTML = `<p style="color: #c74929; text-align: center">${error}</p>`;
   }
 
   async getData(onSuccess, onFail) {
     try {
       const response = await fetch(
-        './data.csv'
+        'https://static.sz.kz/landings/new-year-marathon/data.csv'
+        // './data.csv'
       );
 
       if (!response.ok) {
@@ -98,7 +98,7 @@ class RatingCreator {
         ? this.messages.fail
         : this.messages.fail;
 
-      this.onError(errorMessage)
+      onFail(errorMessage)
     }
   };
 
@@ -183,13 +183,14 @@ class FormHandler {
     phone_length: 13,
     country_code: '+7',
     operator_code: 700,
-    url: 'https://1f51-92-46-46-162.ngrok-free.app/api/send-phone'
+    url: ' https://be64-92-46-46-162.ngrok-free.app/api/send-phone'
   }
 
   messages = {
     fail: "Не удалось подключиться к серверу. Проверьте соединение или попробуйте позже.",
     error: "Произошла ошибка. Пожалуйста, попробуйте позже.",
-    negative: "Пользователь с таким номером не найден."
+    negative: "Пользователь с таким номером не найден.",
+    tooMany: "Вы превысили количество запросов. Попробуйте завтра."
   }
 
   switchState(remove = null, add = null, element = null) {
@@ -263,7 +264,7 @@ class FormHandler {
     if (positive) {
       return `<output class="form-output" id="form-output" for="check-form" role="list">
       <span class="output-item" role="listitem">Ваш Player id - ${text.player_id}</span>
-      <span class="output-item" role="listitem">Позиция в рейтинге: - ${text.table_id}</span>
+      <span class="output-item" role="listitem">Позиция в рейтинге: - ${text.place}</span>
       <span class="output-item" role="listitem">Количество очков: - ${text.amount}</span>
       </output>`;
     }
@@ -290,7 +291,14 @@ class FormHandler {
     )
       .then((response) => {
         if (!response.ok) {
-          throw new Error(this.messages.error);
+          let status = response.status;
+          if (status == 404) {
+            throw new Error(this.messages.negative);
+          } else if (status == 429) {
+            throw new Error(this.messages.tooMany);
+          } else {
+            throw new Error(this.messages.error);
+          }
         }
         return response.json();
       })
@@ -304,7 +312,7 @@ class FormHandler {
 
         let errorMessage = error instanceof TypeError && error.message == 'Failed to fetch'
           ? this.messages.fail
-          : this.messages.error;
+          : error.message;
 
         this.result.innerHTML = this.makeResult(errorMessage);
         this.result.classList.add(this.stateClasses.filled);

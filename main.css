@@ -1,3 +1,12 @@
+@font-face {
+    font-family: "Aesthet Nova Medium";
+    src: url("./assets/font/Aesthet-Nova-Medium.woff2") format("woff2"),
+        url("./assets/font/Aesthet-Nova-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     --bg: #0A3C45;
     --text: #164047;
@@ -132,10 +141,12 @@ p {
     font-family: "Alegreya SC", serif;
     font-weight: 800;
     border-radius: var(--radius);
+    transition: .3s ease-in-out;
 }
 
 .m-button:disabled {
     opacity: .8;
+    pointer-events: none;
 }
 
 .m-button>* {
@@ -154,13 +165,14 @@ p {
 }
 
 .m-button--accent {
+    --sh: transparent;
     display: grid;
     color: transparent;
     font-size: var(--l-text);
     line-height: 1.2;
     background: linear-gradient(180deg, #F16F5D 2.04%, #D45341 4.98%, #AD2E23 84.49%, #850602 92.48%),
         linear-gradient(180deg, #F04B33 0.33%, #C7251A 88.66%, #9C1113 100%);
-    box-shadow: 0px 4px 8px 0px #9C7B55, 1px 1px 2px 0px #FFFFFF inset;
+    box-shadow: 0px 4px 8px 0px #9C7B55, 1px 1px 2px 0px #FFFFFF inset, 0 0 12px var(--sh);
     border: 2px solid #FEDE76
 }
 
@@ -180,6 +192,8 @@ p {
     }
 
     .m-button:is(:hover, :focus-visible) {
+        --sh: #fff;
+        border-color: var(--text-accent);
         filter: brightness(1.2);
     }
     .m-button:focus-visible {
@@ -203,11 +217,10 @@ p {
     font-size: 12px;
     color: #e5412c;
     font-family: 'Arial', sans-serif;
-}
-
-.hero {
+}.hero {
     position: relative;
 }
+
 .hero .section-title {
     padding: 28px 16px 70px;
     position: relative;
@@ -287,6 +300,11 @@ p {
 
 .rating__list {
     margin-bottom: var(--gap-l);
+}
+
+.rating__filler {
+    color: #c74929;
+    text-align: center;
 }
 
 .rating__item {
@@ -408,9 +426,10 @@ p {
     display: flex;
     align-items: center;
     background: linear-gradient(180deg, #196d7c 0%, #07363E 100%);
+    box-shadow: 0 -2px 6px var(--col);
 }
 
-.check__form input[type="text"] {
+.check__form input {
     outline: none;
     border: none;
     width: 100%;
@@ -422,11 +441,17 @@ p {
     background-color: #fff;
 }
 
+.check__form input::placeholder {
+    color: rgba(22, 64, 71, 0.5);
+}
+
 .check__form .input-wrapper.active {
+    --col: #29AFC7;
     background: linear-gradient(180deg, #29AFC7 0%, #07363E 100%);
 }
 
 .check__form .input-wrapper.invalid {
+    --col: #c74929;
     background: linear-gradient(180deg, #c74929 0%, #07363E 100%);
 }
 
@@ -439,6 +464,7 @@ p {
 }
 
 .check__form .input-wrapper.valid {
+    --col: #137e21;
     background: linear-gradient(180deg, #137e21 0%, #175e21 100%);
 }
 
@@ -574,10 +600,12 @@ p {
     border: none;
     border-bottom: 1px solid #FEDE76;
 }
+
 .prizes__table tr,
 .prizes__table tr:nth-child(even) {
     background: none;
 }
+
 .prizes__table td {
     padding: 10px;
 }

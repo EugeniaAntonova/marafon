@@ -83,6 +83,11 @@
     margin-bottom: var(--gap-l);
 }
 
+.rating__filler {
+    color: #c74929;
+    text-align: center;
+}
+
 .rating__item {
     padding: 10px;
     display: grid;

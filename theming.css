@@ -141,6 +141,7 @@ p {
     font-family: "Alegreya SC", serif;
     font-weight: 800;
     border-radius: var(--radius);
+    transition: .3s ease-in-out;
 }
 
 .m-button:disabled {
@@ -164,13 +165,14 @@ p {
 }
 
 .m-button--accent {
+    --sh: transparent;
     display: grid;
     color: transparent;
     font-size: var(--l-text);
     line-height: 1.2;
     background: linear-gradient(180deg, #F16F5D 2.04%, #D45341 4.98%, #AD2E23 84.49%, #850602 92.48%),
         linear-gradient(180deg, #F04B33 0.33%, #C7251A 88.66%, #9C1113 100%);
-    box-shadow: 0px 4px 8px 0px #9C7B55, 1px 1px 2px 0px #FFFFFF inset;
+    box-shadow: 0px 4px 8px 0px #9C7B55, 1px 1px 2px 0px #FFFFFF inset, 0 0 12px var(--sh);
     border: 2px solid #FEDE76
 }
 
@@ -190,6 +192,8 @@ p {
     }
 
     .m-button:is(:hover, :focus-visible) {
+        --sh: #fff;
+        border-color: var(--text-accent);
         filter: brightness(1.2);
     }
     .m-button:focus-visible {
